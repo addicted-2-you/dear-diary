@@ -1,0 +1,51 @@
+{
+  "name": "dear-diary-desktop",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build:dev:electron": "cross-env NODE_ENV=development webpack --config webpack.electron.config.js --mode development",
+    "dev:react": "cross-env NODE_ENV=development webpack serve --config webpack.react.config.js --mode development",
+    "dev:electron": "npm run build:dev:electron && electron ./dist/main.js",
+    "dev": "concurrently \"npm run dev:react\" \"wait-on http://localhost:3000 && npm run dev:electron\"",
+    "lint": "eslint ./src/**/*.{js,jsx}"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/plugin-transform-runtime": "^7.14.5",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "concurrently": "^6.2.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.2.6",
+    "electron-builder": "^22.11.7",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^1.6.0",
+    "node-sass": "^6.0.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.3.1",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^2.0.0",
+    "wait-on": "^5.3.0",
+    "webpack": "^5.40.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "electron": "^13.1.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
