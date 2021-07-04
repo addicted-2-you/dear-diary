@@ -1,5 +1,7 @@
 import { app, BrowserWindow } from 'electron';
 
+import '../database/index';
+
 let mainWindow;
 
 function createWindow() {
@@ -8,6 +10,7 @@ function createWindow() {
     height: 600,
     webPreferences: {
       nodeIntegration: true,
+      contextIsolation: false,
     },
   });
 
@@ -23,4 +26,5 @@ function createWindow() {
 }
 
 app.on('ready', createWindow);
+
 app.allowRendererProcessReuse = true;

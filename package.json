@@ -7,7 +7,8 @@
     "dev:react": "cross-env NODE_ENV=development webpack serve --config webpack.react.config.js --mode development",
     "dev:electron": "npm run build:dev:electron && electron ./dist/main.js",
     "dev": "concurrently \"npm run dev:react\" \"wait-on http://localhost:3000 && npm run dev:electron\"",
-    "lint": "eslint ./src/**/*.{js,jsx}"
+    "lint": "eslint ./src/**/*.{js,jsx}",
+    "postinstall": "electron-builder install-app-deps"
   },
   "keywords": [],
   "author": "",
@@ -46,6 +47,7 @@
   "dependencies": {
     "electron": "^13.1.4",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "sqlite3": "^5.0.2"
   }
 }

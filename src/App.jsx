@@ -1,8 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+
+import FinancesPage from './pages/FinancesPage';
 
 function App() {
-  return <h1>This is react</h1>;
+  return (
+    <>
+      <h1>This is react</h1>
+
+      <FinancesPage />
+    </>
+  );
 }
 
 export default App;
