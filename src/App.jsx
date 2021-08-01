@@ -1,12 +1,10 @@
 import React from 'react';
 
-import FinancesPage from './pages/FinancesPage';
+import FinancesPage from './pages/finances-page/FinancesPage';
 
 function App() {
   return (
     <>
-      <h1>This is react</h1>
-
       <FinancesPage />
     </>
   );

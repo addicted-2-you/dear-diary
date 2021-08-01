@@ -1,11 +1,13 @@
 import { ipcRenderer } from 'electron';
 
-export function sendSql(sql) {
+import { uuidv4 } from '../utils/core.utils';
+
+export function sendSql(sql, code = uuidv4()) {
   return new Promise((resolve) => {
-    ipcRenderer.once('sql-response', (_, arg) => {
+    ipcRenderer.once(`sql-response-${code}`, (_, arg) => {
       resolve(arg);
     });
 
-    ipcRenderer.send('sql-request', sql);
+    ipcRenderer.send('sql-request', { sql, code });
   });
 }
