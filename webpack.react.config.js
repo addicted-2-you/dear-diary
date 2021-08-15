@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   target: 'electron-renderer',
   devtool: 'inline-source-map',
-  entry: ['./src/index.jsx', './src/styles/index.scss'],
+  entry: ['./src/index.jsx', './src/styles/index.css'],
 
   resolve: {
     extensions: ['.js', '.ts', '.jsx'],
@@ -39,7 +39,7 @@ module.exports = {
 
       {
         test: /\.(sc|sa|c)ss$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
       },
 
       {
