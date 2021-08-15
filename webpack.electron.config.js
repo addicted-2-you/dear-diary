@@ -1,13 +1,13 @@
 const path = require('path');
 
+const sharedConfig = require('./webpack.config.shared');
+
 module.exports = {
+  ...sharedConfig,
+
   devtool: 'source-map',
   entry: './src/electron/main.js',
   target: 'electron-main',
-
-  resolve: {
-    extensions: ['.js', '.jsx'],
-  },
 
   output: {
     path: path.resolve(__dirname, './dist'),

@@ -3,22 +3,14 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const sharedConfig = require('./webpack.config.shared');
+
 module.exports = {
+  ...sharedConfig,
+
   target: 'electron-renderer',
   devtool: 'inline-source-map',
   entry: ['./src/index.jsx', './src/styles/index.css'],
-
-  resolve: {
-    extensions: ['.js', '.ts', '.jsx'],
-    // alias: {
-    //   components: path.resolve(__dirname, './src/components/'),
-    //   constants: path.resolve(__dirname, './src/constants/'),
-    //   models: path.resolve(__dirname, './src/models/'),
-    //   server: path.resolve(__dirname, './src/server/'),
-    //   styles: path.resolve(__dirname, './src/styles/'),
-    //   utils: path.resolve(__dirname, './src/utils/'),
-    // },
-  },
 
   output: {
     path: path.resolve(__dirname, 'dist/renderer'),
