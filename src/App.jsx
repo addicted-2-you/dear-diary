@@ -1,11 +1,11 @@
 import React from 'react';
 
-import FinancesPage from './pages/finances-page/FinancesPage';
+import DayPlannerPage from './pages/day-planner/DayPlannerPage';
 
 function App() {
   return (
     <>
-      <FinancesPage />
+      <DayPlannerPage />
     </>
   );
 }
