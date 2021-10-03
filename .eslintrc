@@ -1,0 +1,15 @@
+{
+  "extends": ["plugin:vue/vue3-essential", "eslint:recommended"],
+
+  "parserOptions": {
+    "parser": "babel-eslint"
+  },
+
+  "rules": {},
+
+  "globals": {
+    "process": true,
+    "window": true,
+    "document": true
+  }
+}
