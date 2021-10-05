@@ -1,5 +1,5 @@
 <template>
-  <h1>dear diary</h1>
+  <h1 class="text-2xl">dear diary</h1>
 </template>
 
 <script>
